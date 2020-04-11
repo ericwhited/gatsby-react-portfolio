@@ -1,8 +1,8 @@
 ---
-slug: "/hitechwireless"
+slug: "projects/hitechwireless"
 title: "HiTechWireless"
 subtitle: "Ful Site Build"
-app_image: ../images/jh.png
+featuredImage: jh.png
 
 ---
 

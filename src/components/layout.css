@@ -8,6 +8,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body > * {
+  color: white;
+}
 article,
 aside,
 details,
@@ -63,6 +66,7 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  text-transform: uppercase;
 }
 mark {
   background-color: #ff0;

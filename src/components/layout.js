@@ -9,9 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import Nav from './nav'
 import "./layout.css"
+import "./globalStyles.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div style={{background: "black"}}>
       <Nav></Nav>
       <div>
         <main>{children}</main>
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a> */}
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -43,4 +43,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Layout;
