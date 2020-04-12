@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link, StaticQuery, graphql} from 'gatsby';
-// import Img from 'gatsby-image';
-import styled, {css} from 'styled-components'
+import Img from 'gatsby-image';
+import styled, {css} from 'styled-components';
+import projectArrow from '../images/projectArrow.png';
 
 const PROJECT_LISTING_QUERY = graphql`
-    query ProjectListing {
-  allMarkdownRemark {
-    edges {
-      node {
-        frontmatter {
-          title
-          subtitle
-          slug
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
+  query ProjectListing {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            subtitle
+            slug
+            featuredImage {
+              absolutePath
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
@@ -23,18 +26,15 @@ const PROJECT_LISTING_QUERY = graphql`
       }
     }
   }
-}
-
 `
-
 const StyledLink = styled(Link)`
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  /* border: 2px solid red; */
+  align-items: center;
+  justify-content: start;
   text-decoration: none;
-  padding: 40px 0;
   text-transform: uppercase;
+  overflow: hidden;
+  margin: 0 auto;
 `
 
 const Title = styled.p`
@@ -51,27 +51,42 @@ const SubTitle = styled(Title)`
 
 const ProjectNumber = styled(Title)`
   color: black;
+  margin: 0 0 0 auto;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
+`
+
+const TitleWrapper = styled.div`
+  min-width: 350px;
+`
+
+const ImgWrapStyle = {
+  // transform: "translate(-600px, 0px", 
+  position: "relative", 
+  height: "250px", 
+  width: "250px", 
 }
 
-
-`
 
 const projectListing = () => (
     <StaticQuery query={PROJECT_LISTING_QUERY} render={({ allMarkdownRemark }) => (
       <div style={{padding: "0 11rem"}}>
-       { allMarkdownRemark.edges.map(({node}, index) => {
+       { allMarkdownRemark.edges.map(({node, file}, index) => {
             return (
-            <StyledLink to={node.frontmatter.slug}>
-              <div>
-                <SubTitle>{node.frontmatter.subtitle}</SubTitle>
-                <Title>{node.frontmatter.title}</Title>
-              </div>
-              <ProjectNumber>{`0${index+1}`}</ProjectNumber>
-                {/* see notion notes as to why this isnt working right now. */}
-                {/* <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} imgStyle={{height: "unset", width: "unset"}} style={{height: "500px", width: "500px"}} /> */}
-            </StyledLink>
+              <StyledLink to={node.frontmatter.slug} image={node.frontmatter.featuredImage.absolutePath}>
+                <TitleWrapper>
+                  <SubTitle>{node.frontmatter.subtitle}</SubTitle>
+                  <Title>{node.frontmatter.title}</Title>
+                </TitleWrapper>
+                  <Img 
+                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+                    objectFit="contain"
+                    style={ImgWrapStyle} 
+                    imgStyle={{objectFit: "contain"}}
+                  />
+                  <img src={projectArrow} alt="projectArrow" style={{margin: "0"}} /> 
+                <ProjectNumber>{`0${index+1}`}</ProjectNumber>
+              </StyledLink>
             )
         })}
         </div>
@@ -83,3 +98,19 @@ export default styled(projectListing) (
     background: red;
   `
 )
+
+
+// {
+//   file(relativePath: {eq: "/src/projects/projectArrow.png"}) {
+//     childImageSharp {
+//       fixed(width: 125, height: 125) {
+//         base64
+//         tracedSVG
+//         aspectRatio
+//         srcWebp
+//         srcSetWebp
+//         originalName
+//       } 
+//     }
+//   }
+// }

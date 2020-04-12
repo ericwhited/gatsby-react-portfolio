@@ -21,7 +21,7 @@ exports.createPages = ({ graphql, actions}) => {
         `).then(results => {
             results.data.allMarkdownRemark.edges.forEach(({node}) =>{
                 createPage({
-                    path: `/projects${node.frontmatter.slug}`,
+                    path: `${node.frontmatter.slug}`,
                     component: path.resolve('./src/components/projectLayout.js'),
                     // lets us pass data into the template itself that we'll be able to query
                     context: {
