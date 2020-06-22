@@ -30,8 +30,8 @@ const Nav = () => (
     <Heading>Eric Whited</Heading>
     <nav>
         <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="projects">Projects</StyledLink>
-        <StyledLink to="contact">Contact</StyledLink>
+        <StyledLink to="/projects">Projects</StyledLink>
+        <StyledLink to="/contact">Contact</StyledLink>
     </nav>
     </NavContainer>
 )

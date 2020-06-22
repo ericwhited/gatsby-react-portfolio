@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div style={{background: "black"}}>
+    <div style={{background: "#121212"}}>
       <Nav></Nav>
       <div>
         <main>{children}</main>
