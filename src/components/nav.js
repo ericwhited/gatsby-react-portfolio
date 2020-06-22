@@ -26,7 +26,7 @@ const Heading = styled.h1`
 
 const Nav = () => (
     <NavContainer>
-    <Heading>{window.location.pathname === "/" ? "/home" : `${window.location.pathname}` }</Heading>
+    {/* <Heading>{window.location.pathname === "/" ? "/home" : `${window.location.pathname}` }</Heading> */}
     <Heading>Eric Whited</Heading>
     <nav>
         <StyledLink to="/">Home</StyledLink>
