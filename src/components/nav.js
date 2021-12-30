@@ -9,6 +9,12 @@ const StyledLink = styled(Link)`
     flex: 1;
     text-transform: uppercase;
     font-family: Anton;
+    font-size: 18px
+`
+
+const StyledNav = styled.nav`
+    flex: 1;
+    text-align: right;
 `
 
 const NavContainer = styled.div`
@@ -22,17 +28,25 @@ const NavContainer = styled.div`
 
 const Heading = styled.h1`
     flex: 1;
+    margin: 0;
+    font-family: 'Anton';
+`
+
+const Name = styled(Heading)`
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
 `
 
 const Nav = () => (
     <NavContainer>
-    {/* <Heading>{window.location.pathname === "/" ? "/home" : `${window.location.pathname}` }</Heading> */}
-    <Heading>Eric Whited</Heading>
-    <nav>
+    <Heading>{window.location.pathname === "/" ? "Home" : `${window.location.pathname.replace(/\\|\//g,'')}` }</Heading>
+    <Name>Eric Whited</Name>
+    <StyledNav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/projects">Projects</StyledLink>
         <StyledLink to="/contact">Contact</StyledLink>
-    </nav>
+    </StyledNav>
     </NavContainer>
 )
 
