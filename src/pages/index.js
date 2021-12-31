@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from 'styled-components'
 // import Img from 'gatsby-image';
 
@@ -65,7 +65,7 @@ const AboutLinks = styled.a`
   display: inline-block;
 `
 
-const SeeAll = styled.a`
+const SeeAll = styled(Link)`
   font-size: 16px;
   display: inline-block;
   flex: 1;
@@ -144,7 +144,7 @@ const IndexPage = () => {
             <SkillsListing skills={be_skills} />
             <SkillsHeading>Design</SkillsHeading>
             <SkillsListing skills={design_skills} />
-            <SeeAll href="##">See All</SeeAll>
+            <SeeAll to="/resume">See All</SeeAll>
           </StyledSection>
         </SkillsContainer>
     </Layout>

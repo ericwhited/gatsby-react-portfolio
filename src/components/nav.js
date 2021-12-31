@@ -46,7 +46,7 @@ const Nav = () => (
     <StyledNav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/projects">Projects</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+        <StyledLink to="/resume">Resume</StyledLink>
     </StyledNav>
     </NavContainer>
 )

@@ -34,7 +34,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0 auto 24px;
 `
 
 const Title = styled.h2`
