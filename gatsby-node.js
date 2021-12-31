@@ -1,4 +1,4 @@
-// this helps create pages programmatically?
+// this helps create pages programmatically
 // path is from node
 const path = require('path');
 

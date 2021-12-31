@@ -23,7 +23,8 @@ const NavContainer = styled.div`
     justify-content: space-between;
     text-transform: uppercase;
     padding: 2rem 3rem;
-
+    max-width: calc(1920px + 3rem);
+    margin: 0 auto 48px;
 `
 
 const Heading = styled.h1`
@@ -40,7 +41,7 @@ const Name = styled(Heading)`
 
 const Nav = () => (
     <NavContainer>
-    <Heading>{window.location.pathname === "/" ? "Home" : `${window.location.pathname.replace(/\\|\//g,'')}` }</Heading>
+    <Heading>{window.location.pathname === "/" ? "Home" : `${window.location.pathname}` }</Heading>
     <Name>Eric Whited</Name>
     <StyledNav>
         <StyledLink to="/">Home</StyledLink>

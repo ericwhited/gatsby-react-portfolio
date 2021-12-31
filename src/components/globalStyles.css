@@ -1,7 +1,17 @@
 body {
-    background: black;
+    background: #121212;
 }
 
-h1, h2, h3, p {
-    font-family: Anton;
+h1, h2, h3, h4, h5, h6 {
+    font-family: Anton, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+p {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
 }

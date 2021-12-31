@@ -8,10 +8,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, {css} from 'styled-components'
 
 import Nav from './nav'
 import "./layout.css"
 import "./globalStyles.css"
+
+const Container = styled.div`
+  max-width: calc(1700px + 3rem);
+  margin: 0 auto;
+  padding: 0 3rem;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,14 +34,14 @@ const Layout = ({ children }) => {
   return (
     <div style={{background: "#121212"}}>
       <Nav></Nav>
-      <div>
+      <Container>
         <main>{children}</main>
         <footer>
           {/* © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a> */}
         </footer>
-      </div>
+      </Container>
     </div>
   )
 }

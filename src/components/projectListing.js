@@ -37,7 +37,7 @@ const StyledLink = styled(Link)`
   margin: 0 auto;
 `
 
-const Title = styled.p`
+const Title = styled.h2`
   color: white;
   font-size: 50px;
   display: block;
@@ -47,6 +47,7 @@ const SubTitle = styled(Title)`
   font-family: 'Montserrat', sans-serif;
   text-transform: capitalize;
   font-size: 14px;
+  margin-bottom: 4px;
 `
 
 const ProjectNumber = styled(Title)`
@@ -67,10 +68,16 @@ const ImgWrapStyle = {
   width: "250px", 
 }
 
+const ListingContainer = styled.div`
+  padding: 0px 3rem;
+  max-width: 1700px;
+  margin: 0 auto;
+`
+
 
 const projectListing = () => (
     <StaticQuery query={PROJECT_LISTING_QUERY} render={({ allMarkdownRemark }) => (
-      <div style={{padding: "0 11rem"}}>
+      <ListingContainer>
        { allMarkdownRemark.edges.map(({node, file}, index) => {
             return (
               <StyledLink to={node.frontmatter.slug} image={node.frontmatter.featuredImage.absolutePath}>
@@ -89,7 +96,7 @@ const projectListing = () => (
               </StyledLink>
             )
         })}
-        </div>
+        </ListingContainer>
     )} />
 )
 
