@@ -88,12 +88,6 @@ const SeeAll = styled(Link)`
   text-decoration: underline;row
   font-weight: 600;
   color: #fff;
-
-  &:hover ${SeeAll}, 
-  &:focus ${SeeAll},
-  &:active ${SeeAll},
-    color: #fff;
-  }
 `
 
 const AboutIcons = styled.img`
