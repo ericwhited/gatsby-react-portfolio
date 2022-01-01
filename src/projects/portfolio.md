@@ -1,4 +1,5 @@
 ---
+type: "Dev"
 slug: "/projects/portfolio"
 title: "Portfolio"
 subtitle: "Portfolio site made with React & Gatsby"

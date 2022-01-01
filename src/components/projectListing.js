@@ -6,10 +6,11 @@ import projectArrow from '../images/projectArrow.png';
 
 const PROJECT_LISTING_QUERY = graphql`
   query ProjectListing {
-    allMarkdownRemark {
+    allMarkdownRemark (filter: {frontmatter: {type: {eq: "Dev"}}}) {
       edges {
         node {
           frontmatter {
+            type
             title
             subtitle
             slug
@@ -100,11 +101,7 @@ const projectListing = () => (
     )} />
 )
 
-export default styled(projectListing) (
-  () => css`
-    background: red;
-  `
-)
+export default projectListing;
 
 
 // {

@@ -1,4 +1,5 @@
 ---
+type: "Dev"
 slug: "/projects/task-manager"
 title: "Task Manager"
 subtitle: "NestJS full stack application with user authentication"
