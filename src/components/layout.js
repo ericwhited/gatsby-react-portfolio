@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 import Nav from './nav'
 import "./layout.css"
@@ -17,7 +17,11 @@ import "./globalStyles.css"
 const Container = styled.div`
   max-width: calc(1700px + 3rem);
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 3rem;
+  }
 `
 
 const Layout = ({ children }) => {

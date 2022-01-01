@@ -1,10 +1,11 @@
 ---
 type: "Dev"
-slug: "/projects/task-manager"
+slug: "/dev-projects/task-manager"
 title: "Task Manager"
 subtitle: "NestJS full stack application with user authentication"
 featuredImage: nestjs.png
-githubLink: "https://github.com/ericwhited/gatsby-react-portfolio"
+link: "https://github.com/ericwhited/gatsby-react-portfolio"
+buttonText: "gitHub"
 
 ---
 

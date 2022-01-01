@@ -6,7 +6,7 @@ import ProjectListing from '../components/projectListing'
 
 const Designs = () => (
     <Layout>
-        <h1>Design Page</h1>
+        <ProjectListing type="Design" />
     </Layout>
 )
 

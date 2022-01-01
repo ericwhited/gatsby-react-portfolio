@@ -35,10 +35,25 @@ const StyledSection = styled.section`
 
 const SkillsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  ${'' /* grid-template-rows: 1fr 1fr; */}
   grid-column-gap: 120px;
-  width: 80%;
+  grid-row-gap: 56px;
+  width: 100%;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  @media (min-width: 1440px) {
+    width: 80%;
+  }
 `
 
 const Banner = styled.h1`
@@ -50,7 +65,11 @@ const Banner = styled.h1`
 const SubBanner = styled.h2`
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 16px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 64px;
+  }
 `
 
 const SectionHeading = styled.h3`
@@ -60,18 +79,13 @@ const SectionHeading = styled.h3`
   display: flex;
   align-items: center;
 `
-
-const AboutLinks = styled.a`
-  display: inline-block;
-`
-
 const SeeAll = styled(Link)`
   font-size: 16px;
   display: inline-block;
   flex: 1;
   text-align: right;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  text-decoration: underline;
+  text-decoration: underline;row
   font-weight: 600;
   color: #fff;
 
@@ -112,7 +126,7 @@ const IndexPage = () => {
 
   const [design_skills, set_design_skills] = useState([
     {name: 'Figma', img: figma, alt:'Figma'},
-    {name: 'Adobe Illustrator', img: adobeillustrator, alt:'Adobe Illustrator'},
+    {name: 'Illustrator', img: adobeillustrator, alt:'Adobe Illustrator'},
     {name: 'Invision', img: invision, alt:'Invision'},
     {name: 'Adobe Xd', img: adobexd, alt:'Adobe Xd'},
   ])

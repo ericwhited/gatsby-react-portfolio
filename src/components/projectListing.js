@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import projectArrow from '../images/projectArrow.png';
 
 const PROJECT_LISTING_QUERY = graphql`
   query ProjectListing {
-    allMarkdownRemark (filter: {frontmatter: {type: {eq: "Dev"}}}) {
+    allMarkdownRemark {
       edges {
         node {
           frontmatter {
@@ -14,6 +14,7 @@ const PROJECT_LISTING_QUERY = graphql`
             title
             subtitle
             slug
+            buttonText
             featuredImage {
               absolutePath
               childImageSharp {
@@ -40,8 +41,16 @@ const StyledLink = styled(Link)`
 
 const Title = styled.h2`
   color: white;
-  font-size: 50px;
   display: block;
+  font-size: 35px;
+
+  @media (min-width: 550px) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 50px;
+  }
 `
 
 const SubTitle = styled(Title)`
@@ -49,17 +58,30 @@ const SubTitle = styled(Title)`
   text-transform: capitalize;
   font-size: 14px;
   margin-bottom: 4px;
+
+  @media (min-width: 550px) {
+    font-size: 18px;
+  }
 `
 
 const ProjectNumber = styled(Title)`
+  display: none;
   color: black;
   margin: 0 0 0 auto;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+  }
+  
 `
 
 const TitleWrapper = styled.div`
-  min-width: 350px;
+
+  @media (min-width: 768px) {
+    min-width: 350px;
+  }
 `
 
 const ImgWrapStyle = {
@@ -67,21 +89,35 @@ const ImgWrapStyle = {
   position: "relative", 
   height: "250px", 
   width: "250px", 
+  marginLeft: "16px"
 }
 
 const ListingContainer = styled.div`
-  padding: 0px 3rem;
+  ${'' /* padding: 0px 3rem; */}
   max-width: 1700px;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 0 3rem;
+  }
+`
+
+const ProjectArrow = styled.img`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+  }
 `
 
 
-const projectListing = () => (
+const projectListing = ({ type }) => (
     <StaticQuery query={PROJECT_LISTING_QUERY} render={({ allMarkdownRemark }) => (
       <ListingContainer>
        { allMarkdownRemark.edges.map(({node, file}, index) => {
+          if (node.frontmatter.type === type) {
             return (
-              <StyledLink to={node.frontmatter.slug} image={node.frontmatter.featuredImage.absolutePath}>
+              <StyledLink to={node.frontmatter.slug} key={index} image={node.frontmatter.featuredImage.absolutePath}>
                 <TitleWrapper>
                   <SubTitle>{node.frontmatter.subtitle}</SubTitle>
                   <Title>{node.frontmatter.title}</Title>
@@ -92,10 +128,11 @@ const projectListing = () => (
                     style={ImgWrapStyle} 
                     imgStyle={{objectFit: "contain"}}
                   />
-                  <img src={projectArrow} alt="projectArrow" style={{margin: "0"}} /> 
+                  <ProjectArrow src={projectArrow} alt="projectArrow" style={{margin: "0"}} /> 
                 <ProjectNumber>{`0${index+1}`}</ProjectNumber>
               </StyledLink>
             )
+          }
         })}
         </ListingContainer>
     )} />

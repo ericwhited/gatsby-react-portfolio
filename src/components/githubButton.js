@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const StyledButton = styled.a`
     color: white;
@@ -13,9 +13,9 @@ const StyledButton = styled.a`
     display: inline-block;
 `
 
-const GithubButton = ({ link }) => (
+const GithubButton = ({ link, text }) => (
     <StyledButton href={link}>
-        Github
+        {text}
     </StyledButton>
 )
 

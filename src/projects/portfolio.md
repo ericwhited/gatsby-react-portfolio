@@ -1,10 +1,11 @@
 ---
 type: "Dev"
-slug: "/projects/portfolio"
+slug: "/dev-projects/portfolio"
 title: "Portfolio"
 subtitle: "Portfolio site made with React & Gatsby"
 featuredImage: icon-512x512.png
-githubLink: "https://github.com/ericwhited/gatsby-react-portfolio"
+link: "https://github.com/ericwhited/gatsby-react-portfolio"
+buttonText: "GitHub"
 
 ---
 

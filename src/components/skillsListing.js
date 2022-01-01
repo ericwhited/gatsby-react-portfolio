@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled, {css} from 'styled-components'
+import React from "react";
+import styled from 'styled-components'
 
 const SkillList = styled.ul`
     display: flex;
@@ -7,11 +7,16 @@ const SkillList = styled.ul`
 `
 
 const SkillItem = styled.li`
-    margin: 0 24px 0 0;
+    margin: 0 14px 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 768px) {
+        margin: 0 24px 0 0;
+  }
+
 `
 
 const ImgContainer = styled.div`
@@ -37,9 +42,9 @@ const SkillsListing = ({ skills }) => {
     return (
         <SkillList>
             {
-            skills.map((skill) => {
+            skills.map((skill, index) => {
                 return (
-                <SkillItem>
+                <SkillItem key={index}>
                     <ImgContainer>
                         <SkillImg src={skill.img} alt={skill.alt}/> 
                     </ImgContainer>

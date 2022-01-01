@@ -4,11 +4,11 @@ import ProjectListing from '../components/projectListing'
 
 
 
-const Projects = () => (
+const DevProjects = () => (
     <Layout>
         {/* this is not the page name */}
-        <ProjectListing />
+        <ProjectListing type="Dev" />
     </Layout>
 )
 
-export default Projects;
+export default DevProjects;
