@@ -58,10 +58,18 @@ const Name = styled(Heading)`
     text-align: center;
     letter-spacing: 1px;
 `
+const isBrowser = typeof window !== "undefined"
 
+const renderHeading = () => {
+    if(isBrowser) {
+        return (
+            <Heading>{window.location.pathname === "/" ? "Home" : `${window.location.pathname}` }</Heading>
+        )
+    }
+}
 const Nav = () => (
     <NavContainer>
-    <Heading>{window.location.pathname === "/" ? "Home" : `${window.location.pathname}` }</Heading>
+    {renderHeading()}
     <Name>Eric Whited</Name>
     <StyledNav>
         <StyledLink to="/">Home</StyledLink>
