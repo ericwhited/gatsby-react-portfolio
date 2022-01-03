@@ -134,8 +134,7 @@ const IndexPage = () => {
           <StyledSection className="about-section">
             <SectionHeading>About</SectionHeading>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est fermentum lorem sollicitudin. Cursus sed arcu adipiscing rhoncus. Sagittis lacinia eu pellentesque mi sed et a ac. Tristique tellus bibendum tempus, arcu sem mi vestibulum amet. Molestie scelerisque ipsum tincidunt massa tincidunt.
-              Tellus sed lorem felis aliquet pellentesque fusce. Feugiat nibh aliquam mauris bibendum eget ultricies quam netus. Non eu amet, aliquam augue vitae id integer eleifend. Elementum eros, cras nunc at. Sed porta in erat tincidunt. In suspendisse tempor sed quis quam a, eros, pulvinar feugiat. Integer volutpat elementum, eu semper pharetra nulla diam. Elementum non vel pharetra aliquam pretium molestie facilisis. Pellentesque augue faucibus lectus eget amet, nibh. Morbi convallis pharetra adipiscing rhoncus leo, duis convallis lectus massa. Diam libero viverra egestas purus ut pharetra. Felis ut a tortor donec.
+            My name is Eric Whited and I'm a full-stack web developer with experience in HTML, CSS, JavaScript, jQuery, SASS and NestJS. My interest in coding began back when I started gaming online. I took up the challenge to create a simple website for my guild and the rest was history. My experience is in front-end and design with a lot of interest in back-end javascript development.
             </p>
             <AboutIconLink href="https://www.linkedin.com/in/eric-whited/">
               <AboutIcons src={linkedin} alt="LinkedIn"/>
