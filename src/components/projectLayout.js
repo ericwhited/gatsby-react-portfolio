@@ -7,13 +7,31 @@ import styled from 'styled-components';
 import GithubButton from './githubButton';
 
 const ProjectTitle = styled.h1`
-    font-size: 65px;
+    font-size: 40px;
     margin-bottom: 8px;
+    text-align: center;
+
+    @media (min-width: 425px) {
+        font-size: 55px;
+    }
+
+
+    @media (min-width: 768px) {
+        text-align: left;
+        font-size: 65px;
+  }
+
+    ${'' /* media query here */}
 `
 
 const ProjectSubTitle = styled.h2`
     font-size: 16px;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        text-align: left;
+  }
 `
 
 const Content = styled.div`
@@ -33,14 +51,23 @@ const ProjectDescription = styled.div`
 
 const Wrapper = styled.div`
     width: 100%;
+    order: 2;
 
     @media (min-width: 768px) {
         width: 50%;
+        order: 0;
   }
 `
 
 const ImgWrapper = styled.div`
-    width: 60vw
+    width: 65%;
+    height: auto;
+    margin: 32px 0 56px;
+
+    @media (min-width: 768px) {
+        margin: 0 auto;
+        width: 45%;
+  }
 `
 
 const RenderGHButton = (link, text) => {
@@ -73,13 +100,9 @@ export default class projectLayout extends Component {
                             secondImage
                                 ? <Img 
                                     fluid={secondImage} 
-                                    style={{height: "100%", width: "100vw", display: "inline-block"}} 
-                                    imgStyle={{height: "100%", width: "100vw"}} 
                                 />
                                 : <Img 
                                     fluid={featuredImgFluid} 
-                                    style={{height: "100%", width: "60vw", display: "inline-block"}} 
-                                    imgStyle={{height: "100%", width: "60vw"}} 
                                 />
                         }
                     </ImgWrapper>
@@ -103,7 +126,7 @@ export const query = graphql`
                 noimage
                 secondImage {
                     childImageSharp {
-                        fluid(maxWidth: 1200) {
+                        fluid(maxWidth: 800) {
                             ...GatsbyImageSharpFluid
                         }
                     }
