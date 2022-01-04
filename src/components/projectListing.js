@@ -36,13 +36,27 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  margin: 0 auto 24px;
+  margin: 0 auto;
+  flex-direction: column;
+  margin-bottom: 56px;
+
+  @media (min-width: 550px) {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 auto 24px;
+  }
 `
 
 const Title = styled.h2`
   color: white;
   display: block;
   font-size: 35px;
+  text-align: center;
+
+  
 
   @media (min-width: 550px) {
     font-size: 50px;
@@ -58,6 +72,8 @@ const SubTitle = styled(Title)`
   text-transform: capitalize;
   font-size: 14px;
   margin-bottom: 4px;
+  text-align: center;
+
 
   @media (min-width: 550px) {
     font-size: 18px;
@@ -78,6 +94,7 @@ const ProjectNumber = styled(Title)`
 `
 
 const TitleWrapper = styled.div`
+  flex: 1;
 
   @media (min-width: 768px) {
     min-width: 350px;
@@ -88,8 +105,10 @@ const ImgWrapStyle = {
   // transform: "translate(-600px, 0px", 
   position: "relative", 
   height: "250px", 
-  width: "250px", 
-  marginLeft: "16px"
+  width: "150px",
+  "minWidth": "150",
+  marginLeft: "16px",
+  "flex": "1"
 }
 
 const ListingContainer = styled.div`
@@ -129,7 +148,7 @@ const projectListing = ({ type }) => (
                     imgStyle={{objectFit: "contain"}}
                   />
                   <ProjectArrow src={projectArrow} alt="projectArrow" style={{margin: "0"}} /> 
-                <ProjectNumber>{`0${index+1}`}</ProjectNumber>
+                {/* <ProjectNumber>{`0${index+1}`}</ProjectNumber> */}
               </StyledLink>
             )
           }
