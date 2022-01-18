@@ -15,7 +15,6 @@ const ProjectTitle = styled.h1`
         font-size: 55px;
     }
 
-
     @media (min-width: 768px) {
         text-align: left;
         font-size: 65px;

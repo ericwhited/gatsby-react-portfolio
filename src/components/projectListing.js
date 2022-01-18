@@ -60,6 +60,7 @@ const Title = styled.h2`
 
   @media (min-width: 550px) {
     font-size: 50px;
+    text-align: left;
   }
 
   @media (min-width: 768px) {
@@ -77,6 +78,7 @@ const SubTitle = styled(Title)`
 
   @media (min-width: 550px) {
     font-size: 18px;
+    text-align: left;
   }
 `
 
