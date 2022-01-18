@@ -58,12 +58,17 @@ const Name = styled(Heading)`
     text-align: center;
     letter-spacing: 1px;
 `
+
+
+
 const isBrowser = typeof window !== "undefined"
 
 const renderHeading = () => {
     if(isBrowser) {
         return (
+            <>
             <Heading>{window.location.pathname === "/" ? "Home" : `${window.location.pathname}` }</Heading>
+            </>
         )
     }
 }
