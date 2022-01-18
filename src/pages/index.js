@@ -103,6 +103,15 @@ const AboutIconLink = styled.a`
   width: 30px;
 `
 
+const DevelopmentMessage = styled.p`
+    display: block;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+`
+
 const IndexPage = () => {
   const [fe_skills, setFe_skills] = useState([
     {name: 'HTML5', img: html5, alt:'HTML5'},
@@ -129,7 +138,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
         <Banner>Eric Whited</Banner>
-        <SubBanner>Web Developer & Designer</SubBanner>
+        <SubBanner>Web Developer & Designer
+        <DevelopmentMessage>*Site still development*</DevelopmentMessage>
+        </SubBanner>
+        
+        
         <SkillsContainer>
           <StyledSection className="about-section">
             <SectionHeading>About</SectionHeading>
