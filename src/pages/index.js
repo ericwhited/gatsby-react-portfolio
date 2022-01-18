@@ -139,7 +139,7 @@ const IndexPage = () => {
       <SEO title="Home" />
         <Banner>Eric Whited</Banner>
         <SubBanner>Web Developer & Designer
-        <DevelopmentMessage>*Site still development*</DevelopmentMessage>
+        <DevelopmentMessage>*Site still in development*</DevelopmentMessage>
         </SubBanner>
         
         
